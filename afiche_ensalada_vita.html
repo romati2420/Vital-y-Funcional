@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ensalada Vita - Información Nutricional</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .infographic {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: #ececec;
+            padding: 50px 40px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
+            border-bottom: 4px solid #4CAF50;
+        }
+
+        .logo-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .company-logo {
+            width: 220px;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        .logo-badge {
+            width: 220px;
+            height: 220px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            margin-bottom: 20px;
+        }
+
+        .logo-badge img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .brand-name {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2e7d32;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .brand-tagline {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+        .header-content {
+            padding: 20px;
+        }
+
+        .header-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #2e7d32;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .header-content .intro {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .badges-row {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .badge-item {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .content {
+            padding: 60px 40px;
+            background: #fafafa;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2e7d32;
+            margin-bottom: 40px;
+            padding-left: 20px;
+            border-left: 6px solid #4CAF50;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .benefit-box {
+            background: white;
+            padding: 35px;
+            border-radius: 10px;
+            border-left: 5px solid #4CAF50;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .benefit-box:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            transform: translateX(5px);
+        }
+
+        .benefit-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: #e8f5e9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .benefit-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2e7d32;
+        }
+
+        .benefit-desc {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+            padding-left: 65px;
+        }
+
+        .nutrition-panel {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .nutrition-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .nutrition-item {
+            text-align: center;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .nutrition-value {
+            font-size: 42px;
+            font-weight: 700;
+            color: #4CAF50;
+            margin-bottom: 8px;
+        }
+
+        .nutrition-label {
+            font-size: 15px;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .sellos-section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 60px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .sellos-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .sellos-text h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2e7d32;
+            margin-bottom: 20px;
+        }
+
+        .sellos-text p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .sellos-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sellos-list li {
+            padding: 12px 0;
+            font-size: 16px;
+            color: #666;
+            border-bottom: 1px solid #e8f5e9;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sellos-list li:last-child {
+            border-bottom: none;
+        }
+
+        .sellos-list .check {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .sellos-badge {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .ingredients-section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 60px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .ingredients-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .ingredient-item {
+            padding: 20px;
+            text-align: center;
+            border: 2px solid #e8f5e9;
+            border-radius: 10px;
+            font-size: 15px;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .ingredient-item:hover {
+            border-color: #4CAF50;
+            background: #f1f8e9;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .footer h3 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer p {
+            font-size: 16px;
+            line-height: 1.9;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            .infographic {
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            .nutrition-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .ingredients-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .sellos-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="infographic">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-section">
+                <img src="logo2.png" class="company-logo" alt="Logo Vital y Funcional">
+                <div class="logo-badge">
+                    <img src="ensalada2.png" alt="Ensalada Vita">
+                </div>
+                <div class="brand-name">Ensalada Vita</div>
+            </div>
+            <div class="header-content">
+                <h1>Nutrición que transforma tu día</h1>
+                <p class="intro">
+                    Una ensalada funcional diseñada para nutrirte de verdad. Con probióticos naturales, 
+                    proteína completa y todos los colores de las vitaminas que necesitas. 
+                    Sin conservantes, sin sellos, solo ingredientes reales.
+                </p>
+                <div class="badges-row">
+                    <div class="badge-item">Sin Sellos</div>
+                    <div class="badge-item">100% Natural</div>
+                    <div class="badge-item">Con Probióticos</div>
+                    <div class="badge-item">Alto en Fibra</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Benefits -->
+            <h2 class="section-title">¿Por qué elegir Ensalada Vita?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-box">
+                    <div class="benefit-header">
+                        <div class="benefit-icon">1</div>
+                        <div class="benefit-title">Probióticos Naturales</div>
+                    </div>
+                    <div class="benefit-desc">Con kéfir y chucrut fermentado que mejoran tu salud digestiva y fortalecen tu sistema inmune</div>
+                </div>
+                <div class="benefit-box">
+                    <div class="benefit-header">
+                        <div class="benefit-icon">2</div>
+                        <div class="benefit-title">Proteína Completa</div>
+                    </div>
+                    <div class="benefit-desc">La quinoa aporta todos los aminoácidos esenciales para tus músculos y energía</div>
+                </div>
+                <div class="benefit-box">
+                    <div class="benefit-header">
+                        <div class="benefit-icon">3</div>
+                        <div class="benefit-title">Colores y Vitaminas</div>
+                    </div>
+                    <div class="benefit-desc">Cada color es una vitamina diferente: antioxidantes, minerales y fibra natural</div>
+                </div>
+                <div class="benefit-box">
+                    <div class="benefit-header">
+                        <div class="benefit-icon">4</div>
+                        <div class="benefit-title">Energía Sostenida</div>
+                    </div>
+                    <div class="benefit-desc">Carbohidratos complejos que te mantienen activo sin picos de azúcar</div>
+                </div>
+            </div>
+
+            <!-- Nutrition Panel -->
+            <h2 class="section-title">Información Nutricional</h2>
+            <div class="nutrition-panel">
+                <div class="nutrition-grid">
+                    <div class="nutrition-item">
+                        <div class="nutrition-value">189</div>
+                        <div class="nutrition-label">Calorías (kcal)</div>
+                    </div>
+                    <div class="nutrition-item">
+                        <div class="nutrition-value">7.3g</div>
+                        <div class="nutrition-label">Proteínas</div>
+                    </div>
+                    <div class="nutrition-item">
+                        <div class="nutrition-value">34.1g</div>
+                        <div class="nutrition-label">Carbohidratos</div>
+                    </div>
+                    <div class="nutrition-item">
+                        <div class="nutrition-value">3.3g</div>
+                        <div class="nutrition-label">Grasas</div>
+                    </div>
+                    <div class="nutrition-item">
+                        <div class="nutrition-value">6.2g</div>
+                        <div class="nutrition-label">Fibra</div>
+                    </div>
+                    <div class="nutrition-item">
+                        <div class="nutrition-value">300g</div>
+                        <div class="nutrition-label">Porción Total</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sellos -->
+            <h2 class="section-title">Certificación Sin Sellos</h2>
+            <div class="sellos-section">
+                <div class="sellos-content">
+                    <div class="sellos-text">
+                        <h3>Cumple con la Ley de Etiquetado</h3>
+                        <p>Ensalada Vita ha sido analizada según los parámetros del Ministerio de Salud de Chile y <strong>no supera ninguno de los límites críticos</strong> establecidos para sellos de advertencia.</p>
+                        <ul class="sellos-list">
+                            <li><span>Alto en calorías</span> <span class="check">✓ NO</span></li>
+                            <li><span>Alto en azúcares</span> <span class="check">✓ NO</span></li>
+                            <li><span>Alto en sodio</span> <span class="check">✓ NO</span></li>
+                            <li><span>Alto en grasas saturadas</span> <span class="check">✓ NO</span></li>
+                        </ul>
+                        <div class="sellos-badge">PRODUCTO SIN SELLOS</div>
+                    </div>
+                    <div class="sellos-image">
+                        <img src="sello.jpg" alt="Sin Sellos" style="width: 100%; max-width: 350px; height: auto; display: block; margin: 0 auto;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ingredients -->
+            <h2 class="section-title">Ingredientes Naturales</h2>
+            <div class="ingredients-section">
+                <div class="ingredients-list">
+                    <div class="ingredient-item">Quinoa cocida</div>
+                    <div class="ingredient-item">Kéfir natural</div>
+                    <div class="ingredient-item">Chucrut fermentado</div>
+                    <div class="ingredient-item">Pepinillos encurtidos</div>
+                    <div class="ingredient-item">Zanahoria rallada</div>
+                    <div class="ingredient-item">Repollo morado</div>
+                    <div class="ingredient-item">Pepino fresco</div>
+                    <div class="ingredient-item">Cilantro</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h3>Tu salud es nuestra prioridad</h3>
+            <p>
+                Ensalada Vita es más que comida: es un compromiso con tu bienestar. 
+                Cada ingrediente es seleccionado para ofrecerte lo mejor de la naturaleza. 
+                Sin conservantes, sin sellos, sin compromisos.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
