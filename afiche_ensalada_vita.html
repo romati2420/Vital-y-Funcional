@@ -29,7 +29,7 @@
 
         .header {
             background: #ececec;
-            padding: 50px 40px;
+            padding: 30px 20px;
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 40px;
@@ -45,9 +45,10 @@
         }
 
         .company-logo {
-            width: 220px;
+            width: 180px;
+            max-width: 100%;
             height: auto;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .logo-badge {
@@ -116,7 +117,7 @@
         }
 
         .content {
-            padding: 60px 40px;
+            padding: 40px 20px;
             background: #fafafa;
         }
 
@@ -345,18 +346,157 @@
             .header {
                 grid-template-columns: 1fr;
                 text-align: center;
+                padding: 20px 15px;
+            }
+            .company-logo {
+                width: 150px;
+            }
+            .logo-badge {
+                width: 180px;
+                height: 180px;
+            }
+            .header-content h1 {
+                font-size: 32px;
+            }
+            .intro {
+                font-size: 15px;
+            }
+            .content {
+                padding: 30px 15px;
+            }
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 25px;
             }
             .benefits-grid {
                 grid-template-columns: 1fr;
             }
+            .benefit-box {
+                padding: 20px;
+            }
             .nutrition-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            .nutrition-item {
+                padding: 20px 10px;
+            }
+            .nutrition-value {
+                font-size: 32px;
             }
             .ingredients-list {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
             }
             .sellos-content {
                 grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .sellos-section,
+            .ingredients-section {
+                padding: 25px 20px;
+            }
+            .footer {
+                padding: 30px 20px;
+            }
+            .footer h3 {
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header {
+                padding: 15px 10px;
+            }
+            .company-logo {
+                width: 120px;
+            }
+            .logo-badge {
+                width: 150px;
+                height: 150px;
+            }
+            .brand-name {
+                font-size: 28px;
+            }
+            .header-content h1 {
+                font-size: 24px;
+            }
+            .intro {
+                font-size: 14px;
+            }
+            .badges-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+            .badge-item {
+                font-size: 11px;
+                padding: 8px 12px;
+            }
+            .content {
+                padding: 20px 10px;
+            }
+            .section-title {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+            .benefit-box {
+                padding: 15px;
+            }
+            .benefit-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+            .benefit-title {
+                font-size: 16px;
+            }
+            .benefit-desc {
+                font-size: 13px;
+            }
+            .nutrition-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .nutrition-item {
+                padding: 15px;
+            }
+            .nutrition-value {
+                font-size: 28px;
+            }
+            .nutrition-label {
+                font-size: 14px;
+            }
+            .ingredients-list {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .ingredient-item {
+                padding: 15px;
+                font-size: 14px;
+            }
+            .sellos-section,
+            .ingredients-section {
+                padding: 20px 15px;
+            }
+            .sellos-text h3 {
+                font-size: 20px;
+            }
+            .sellos-text p,
+            .sellos-list li {
+                font-size: 14px;
+            }
+            .sellos-badge {
+                font-size: 15px;
+                padding: 12px 20px;
+            }
+            .footer {
+                padding: 25px 15px;
+            }
+            .footer h3 {
+                font-size: 20px;
+            }
+            .footer p {
+                font-size: 14px;
             }
         }
     </style>
